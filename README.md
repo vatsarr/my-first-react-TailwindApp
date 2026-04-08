@@ -1,3 +1,3 @@
-my-first-react-TailwindApp
+# my-first-react-TailwindApp
 
-[text](https://vatsarr.github.io/my-first-react-TailwindApp/)
+[gitHub page](https://vatsarr.github.io/my-first-react-TailwindApp/)

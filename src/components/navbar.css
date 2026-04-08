@@ -3,16 +3,24 @@ nav {
   align-items: center;
   padding: 0 28px;
   height: 60px;
-  border-radius: 0 0 12px 12px;
-  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 0;
+  border: 1px solid rgba(0, 0, 0, 0.08);
   position: relative;
 }
 
-nav.light { background: #f8f7f4; --text: #1a1917; --muted: #6b6a65; }
-nav.dark  { background: #17161a; --text: #f0ede8; --muted: #8a8880; }
+nav.light {
+  background: #e6e8e6;
+  --text: #777777;
+  --muted: #6b6a6564;
+}
+nav.dark {
+  background: #203d82;
+  --text: #e6e8e6;
+  --muted: #8a8880;
+}
 
 .brand {
-  font-family: 'DM Serif Display', serif;
+  font-family: "Roboto", sans-serif;
   font-size: 18px;
   color: var(--text);
 }
@@ -31,33 +39,53 @@ nav.dark  { background: #17161a; --text: #f0ede8; --muted: #8a8880; }
   padding: 6px 14px;
   border-radius: 6px;
   text-decoration: none;
-  transition: color 0.2s, background 0.2s;
+  transition:
+    color 0.2s,
+    background 0.2s;
 }
 
 .nav-links a:hover,
-.nav-links a.active { color: var(--text); }
+.nav-links a.active {
+  color: var(--text);
+}
 
-.nav-right { margin-left: auto; }
+.nav-right {
+  margin-left: auto;
+}
 
 .theme-toggle {
-  display: flex; align-items: center; gap: 7px;
-  background: none; border: none; cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .toggle-pill {
-  width: 40px; height: 22px;
+  width: 40px;
+  height: 22px;
   background: #e2e0da;
   border-radius: 11px;
   position: relative;
 }
 
-nav.dark .toggle-pill { background: #2e2c32; }
+nav.dark .toggle-pill {
+  background: #2e2c32;
+}
 
 .toggle-knob {
-  position: absolute; top: 3px; left: 3px;
-  width: 16px; height: 16px;
-  border-radius: 50%; background: #1a1917;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #1a1917;
   transition: transform 0.25s;
 }
 
-nav.dark .toggle-knob { transform: translateX(18px); background: #f0ede8; }
+nav.dark .toggle-knob {
+  transform: translateX(18px);
+  background: #f0ede8;
+}
