@@ -1,61 +1,28 @@
-import { useState } from 'react'
-import './navbar.css'
-
-export default function Navbar({ onMenuClick }) {
-  const [dark, setDark] = useState(false)
-  const [active, setActive] = useState('Work')
-  const links = ['Work', 'About', 'Contact']
-
+export default function Navbar() {
   return (
-    <nav className={dark ? 'dark' : 'light'}>
-
-      { /* hamburger — calls onMenuClick from App */ }
-      <button
-        className="icon-btn"
-        onClick={onMenuClick}
-        aria-label="Toggle sidebar"
-      >
-        <HamburgerIcon />
-      </button>
-
-      <span className="brand">
-        Risto <span className="brand-sub">/ dev</span>
-      </span>
-
-      <div className="nav-links">
-        {links.map(l => (
-          <div
-            key={l}
-            className={`nav-link ${active === l ? 'active' : ''}`}
-            onClick={() => setActive(l)}
-          >{l}</div>
-        ))}
-      </div>
-
-      <div className="nav-right">
-        <button
-          className="theme-toggle"
-          onClick={() => setDark(!dark)}
-          aria-label="Toggle theme"
-        >
-          <span>☀</span>
-          <div className="toggle-pill">
-            <div className="toggle-knob" />
+    <header className="h-16 border-b border-slate-200 bg-white px-4 dark:border-slate-800 dark:bg-slate-900">
+      <div className="grid h-full grid-cols-[auto_1fr_auto] items-center gap-4">
+        <div className="flex items-center">
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-200 font-bold dark:bg-slate-700">
+            L
           </div>
-          <span>☽</span>
-        </button>
-      </div>
-    </nav>
-  )
-}
+        </div>
 
-function HamburgerIcon() {
-  return (
-    <svg width="15" height="15" viewBox="0 0 16 16"
-      fill="none" stroke="currentColor"
-      strokeWidth="1.5" strokeLinecap="round"
-    >
-      <path d="M2 4h12M2 8h12M2 12h12" />
-    </svg>
-  )
+        <div className="mx-auto w-full max-w-xl">
+          <input
+            type="text"
+            placeholder="Search..."
+            className="w-full rounded-lg border border-slate-300 bg-slate-50 px-4 py-2 text-sm outline-none focus:border-slate-400 dark:border-slate-700 dark:bg-slate-800 dark:text-white dark:placeholder:text-slate-400"
+          />
+        </div>
+
+        <div className="flex items-center gap-3">
+          <span className="text-sm font-medium">Risto Vatsar</span>
+          <button className="rounded-lg bg-slate-900 px-3 py-2 text-sm text-white hover:bg-slate-700 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200">
+            Log out
+          </button>
+        </div>
+      </div>
+    </header>
+  );
 }
